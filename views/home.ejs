@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Habit Tracker</title>
+   <link rel="stylesheet" href="/css/home.css">
+   <!-- fontawesome -->
+   <script src="https://kit.fontawesome.com/cf3ddae05c.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+   <header id="header">
+      <h2>
+         Habits Tracker
+      </h2>
+   </header>
+   <ul id="habits-list">
+      <% for(let habit of habits){ %>
+         <li id="habit-<%= habit %>">
+            <div class="habit-details">
+               <p>
+                  <%= habit.title %>
+                  <small>
+                     <%= habit.timing %>
+                  </small>
+               </p>
+               <p>
+                  <%= habit.status %>
+               </p>
+            </div>
+            <div class="delete-habbit">
+               <a href="/habits/delete/<%= habit._id %>">
+                  <i class="fa-solid fa-delete-left"></i>
+               </a>
+            </div>
+         </li>
+      <% } %>
+   </ul>
+
+   <form action="/habits/create" id="create-habit" method="POST">
+      <input type="text" id="title" name="title" required>
+      <input type="radio" name="status" value="Done" required>
+      <input type="radio" name="status" value="Not Done" required>
+      <input type="radio" name="status" value="None" required>
+      <input type="time" name="timing" required>
+      <input type="submit" value="Add habit"> 
+   </form>
+</body>
+
+</html>
