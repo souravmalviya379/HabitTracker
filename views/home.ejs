@@ -23,30 +23,36 @@
             <div class="habit-details">
                <p>
                   <%= habit.title %>
-                  <small>
-                     <%= habit.timing %>
-                  </small>
+                     <small>
+                        <%= habit.timing %>
+                     </small>
                </p>
-               <p>
-                  <%= habit.status %>
-               </p>
+
+               <a href="/habits/status/done/<%= habit._id %>">
+                  <button style="<% if(habit.status == 'Done'){ %>background-color: green <% } %>">Done</button>
+               </a>
+               <a href="/habits/status/notdone/<%= habit._id %>">
+                  <button style="<% if(habit.status == 'Not Done'){ %>background-color: green <% } %>">Not Done</button>
+               </a>
+               <a href="/habits/status/none/<%= habit._id %>">
+                  <button style="<% if(habit.status == 'None'){ %>background-color: green <% } %>">None</button>
+               </a>
             </div>
-            <div class="delete-habbit">
+
+            <div class="delete-habit">
                <a href="/habits/delete/<%= habit._id %>">
                   <i class="fa-solid fa-delete-left"></i>
                </a>
             </div>
          </li>
-      <% } %>
+         <% } %>
    </ul>
 
    <form action="/habits/create" id="create-habit" method="POST">
-      <input type="text" id="title" name="title" required>
-      <input type="radio" name="status" value="Done" required>
-      <input type="radio" name="status" value="Not Done" required>
-      <input type="radio" name="status" value="None" required>
-      <input type="time" name="timing" required>
-      <input type="submit" value="Add habit"> 
+      <input type="text" id="title" name="title" placeholder="Add your habits here" required>
+      <input type="hidden" name="status" value="None">
+      <input type="time" name="timing" placeholder="Time" id="timing" required>
+      <button type="submit"><i class="fa-solid fa-plus"></i> Add Habit</button>
    </form>
 </body>
 

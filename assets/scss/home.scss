@@ -9,7 +9,7 @@ body {
    height: 3rem;
    text-align: center;
    box-sizing: border-box;
-
+   border-radius: 5px;
    h2 {
       padding-top: 10px;
       font-size: 1.6rem;
@@ -50,8 +50,18 @@ body {
             }
          }
 
+         a{
+            text-decoration: none;
+            button{
+               width: 5rem;
+               height: 2rem;
+               margin-left: 1rem;
+            }
+            
+         }
+         
       }
-      .delete-habbit{
+      .delete-habit{
          a:hover{
             color: red;
          }
@@ -61,4 +71,49 @@ body {
          }
       }
    }
+}
+
+#create-habit{
+   display: flex;
+   flex-wrap: wrap;
+   justify-content: space-between;
+   margin: 20px auto;
+   background-color: rgb(244, 188, 188);
+   height: 7rem;
+   width: 70%;
+   padding: 10px;
+   border-radius: 5px;
+
+   #title{
+      height: 3rem;
+      padding: 5px;
+      background-color: lightgrey;
+      border: none;
+      width: 60%;
+      border-radius: 5px;
+   }
+
+   #timing{
+      width: 35%;
+      padding: 5px;
+      background-color: lightgray;
+      border: none;
+      height: 3rem;
+      border-radius: 5px;
+   }
+}
+
+button{
+   height: 2.6rem;
+   width: 10rem;
+   align-self: center;
+   margin: auto;
+   background-color: rgb(91, 89, 89);
+   border: none;
+   padding: 5px;
+   color: white;
+   border-radius: 4px;
+}
+button:hover{
+   background-color: black;
 }

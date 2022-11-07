@@ -7,7 +7,8 @@ body {
   color: #e0dfdf;
   height: 3rem;
   text-align: center;
-  box-sizing: border-box; }
+  box-sizing: border-box;
+  border-radius: 5px; }
   #header h2 {
     padding-top: 10px;
     font-size: 1.6rem; }
@@ -39,8 +40,53 @@ body {
         position: absolute;
         right: 10vw;
         margin-top: 1.2rem; }
-    #habits-list li .delete-habbit a:hover {
+    #habits-list li .habit-details a {
+      text-decoration: none; }
+      #habits-list li .habit-details a button {
+        width: 5rem;
+        height: 2rem;
+        margin-left: 1rem; }
+    #habits-list li .delete-habit a:hover {
       color: red; }
-    #habits-list li .delete-habbit a i {
+    #habits-list li .delete-habit a i {
       font-size: 2rem;
       margin-top: 1rem; }
+
+#create-habit {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin: 20px auto;
+  background-color: #f4bcbc;
+  height: 7rem;
+  width: 70%;
+  padding: 10px;
+  border-radius: 5px; }
+  #create-habit #title {
+    height: 3rem;
+    padding: 5px;
+    background-color: lightgrey;
+    border: none;
+    width: 60%;
+    border-radius: 5px; }
+  #create-habit #timing {
+    width: 35%;
+    padding: 5px;
+    background-color: lightgray;
+    border: none;
+    height: 3rem;
+    border-radius: 5px; }
+
+button {
+  height: 2.6rem;
+  width: 10rem;
+  align-self: center;
+  margin: auto;
+  background-color: #5b5959;
+  border: none;
+  padding: 5px;
+  color: white;
+  border-radius: 4px; }
+
+button:hover {
+  background-color: black; }

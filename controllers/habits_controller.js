@@ -27,3 +27,23 @@ module.exports.destroy = async function(req, res){
         return;
     }
 }
+
+
+module.exports.updateStatus = function(req, res){
+    // console.log(req.params)
+    let status;
+    if(req.params.habitstatus == 'done'){
+        status = 'Done';
+    }else if(req.params.habitstatus == 'notdone'){
+        status = 'Not Done';
+    }else{
+        status = "None";
+    }
+    Habit.findByIdAndUpdate(req.params.id, {status: status}, function(err, habit){
+        if(err){
+            console.log('Error in db while updating status');
+        }
+        return res.redirect('back');
+    });
+    
+}
