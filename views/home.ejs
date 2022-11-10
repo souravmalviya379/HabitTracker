@@ -17,6 +17,16 @@
          Habits Tracker
       </h2>
    </header>
+
+   
+   <!-- view weekly history of habits -->
+   <a href="/habits/history" class="weekBtn">
+      <button>
+         Week View
+      </button>
+   </a>
+
+   <!-- display habits list -->
    <ul id="habits-list">
       <% for(let habit of habits){ %>
          <li id="habit-<%= habit %>">
@@ -28,6 +38,7 @@
                      </small>
                </p>
 
+               <!-- mark the status of habits -->
                <a href="/habits/status/done/<%= habit._id %>">
                   <button style="<% if(habit.status == 'Done'){ %>background-color: green <% } %>">Done</button>
                </a>
@@ -39,6 +50,7 @@
                </a>
             </div>
 
+            <!-- delete habits button -->
             <div class="delete-habit">
                <a href="/habits/delete/<%= habit._id %>">
                   <i class="fa-solid fa-delete-left"></i>
@@ -48,6 +60,7 @@
          <% } %>
    </ul>
 
+   <!-- Add or create new habit -->
    <form action="/habits/create" id="create-habit" method="POST">
       <input type="text" id="title" name="title" placeholder="Add your habits here" required>
       <input type="hidden" name="status" value="None">

@@ -2,7 +2,7 @@ const Habit = require('../models/habit');
 
 module.exports.home = async function(req, res){
     try{ 
-        let habits = await Habit.find({}).sort('-createdAt');
+        let habits = await Habit.find({}).sort('timing');
         return res.render('home', {
             habits: habits
         })

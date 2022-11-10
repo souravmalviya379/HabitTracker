@@ -16,7 +16,17 @@ body {
    }
 }
 
+a.weekBtn button{
+   text-decoration: none;
+   margin: 12px;
+   position: absolute;
+   right: 5vw;
+   font-size: 1.2rem;
+}
+
+
 #habits-list {
+   margin-top: 4rem;
    background-color: rgb(247, 220, 231);
    padding: 8px;
    list-style: none;
@@ -28,7 +38,7 @@ body {
       justify-content: space-between;
       padding-right: 15px;
       padding-left: 5px;
-      height: 4.5rem;  
+      height: 4.7rem;  
       background-color: lightgrey;
       margin: 7px;
       border-top-left-radius: 7px;
@@ -46,18 +56,18 @@ body {
                display: inline-block;
                position: absolute;
                right: 10vw;
-               margin-top: 1.2rem;
+               margin-top: 1.4rem;
             }
          }
-
          a{
             text-decoration: none;
+         }
+         a.delete-habit{
             button{
                width: 5rem;
                height: 2rem;
                margin-left: 1rem;
-            }
-            
+            }   
          }
          
       }
@@ -105,7 +115,7 @@ body {
 
 button{
    height: 2.6rem;
-   width: 10rem;
+   width: 9rem;
    align-self: center;
    margin: auto;
    background-color: rgb(91, 89, 89);
