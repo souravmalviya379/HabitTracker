@@ -1,13 +1,54 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Weekly report</title>
-</head>
-<body>
-    <input type="week" name="week" id="week">  
-    
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>HabitTracker | Weekly report</title>
+    <link rel="stylesheet" href="/css/weekView.css" />
+  </head>
+
+  <body>
+   <header>
+      <h1>HabitTracker | Weekly History</h1>
+   </header>
+
+   <div id="list-header">
+      <% 
+         let dates=[]; 
+         for(let i=6; i>=0; i--){
+             dates.push(new Date(Date.now() - 24*i*60*60*1000).toLocaleDateString()); 
+         } 
+      %>
+      <div id="habit">Habit</div>
+      <% for(let date of dates) { %>
+         <div class="dates"><%= date %></div>
+      <% } %>
+   </div>
+
+   <div id="habit-history">
+ 
+      <% for(let habit of habits) { %>
+         <div class="habit-title"><%= habit.title %></div>
+   
+         <% for(let obj of history) { %>
+            <% if(habit.id == obj.habit) { %>
+               <% for(let date of dates) { %>
+                  <% if(obj.completionDate == date){ %> 
+                     <div class="habit-details">
+                        <%= obj.status %>
+                     </div>
+                  <% } else { %>
+                     <div class="habit-details">
+
+                     </div>
+                  <% } %> 
+               <% } %>
+            <% } %>
+         <% } %>
+          
+      <% } %>
+   </div>
+
+  </body>
 </html>
