@@ -13,7 +13,7 @@ app.use(sassMiddleware({
     debug: true,
     outputStyle: 'extended',
     prefix: '/css'
-}))
+}));
 
 app.use(express.static('./assets'));
 
@@ -21,6 +21,7 @@ app.set('view engine', 'ejs');
 app.set('views', './views');
 
 app.use(express.urlencoded());
+
 
 
 let time = (new Date()).toLocaleTimeString().toString();
@@ -57,7 +58,7 @@ setTimeout(() => {
     setInterval(pushHistory, 24*60*60*1000);
         // setInterval(pushHistory, 100000);
 
-    }, (24*60 - minutes - 25 )*60*1000);
+    }, (24*60 - minutes - 2)*60*1000);
         // }, 3000);
 
 
