@@ -8,6 +8,11 @@ In HabitTracker WebApp, user can add his/her daily habits he need to follow, and
 * User can toggle between the today's habit's status.
 * User can also toggle between the habit's status of previous 6 days.
 
+## Technologies Used
+* Frontend : HTML, CSS, JavaScript
+* Backend : ExpressJS, EJS Template Engine
+* Database : MongoDB
+
 ## Installation
  As web app is not currently deployed on web. To run it in localhost, install the following tools:-
 * Node.js
