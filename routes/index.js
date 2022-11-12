@@ -11,6 +11,6 @@ router.post('/habits/create', habitsController.create);
 router.get('/habits/delete/:id', habitsController.destroy);
 router.get('/habits/status/:habitstatus/:id', habitsController.updateStatus);
 router.get('/habits/history', habitLogController.showHistory);
-
+router.get('/history/updatestatus/:status/:id', habitLogController.updateStatus);
 
 module.exports = router;

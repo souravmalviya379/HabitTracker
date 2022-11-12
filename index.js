@@ -57,7 +57,7 @@ setTimeout(() => {
     setInterval(pushHistory, 24*60*60*1000);
         // setInterval(pushHistory, 100000);
 
-    }, (24*60 - minutes - 2 )*60*1000);
+    }, (24*60 - minutes - 25 )*60*1000);
         // }, 3000);
 
 

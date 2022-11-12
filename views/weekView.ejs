@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>HabitTracker | Weekly report</title>
     <link rel="stylesheet" href="/css/weekView.css" />
+    <script src="https://kit.fontawesome.com/cf3ddae05c.js" crossorigin="anonymous"></script>
   </head>
 
   <body>
@@ -21,32 +22,49 @@
          } 
       %>
       <div id="habit">Habit</div>
-      <% for(let date of dates) { %>
-         <div class="dates"><%= date %></div>
+      <% for(let i=0; i<dates.length-1; i++) { %>
+         <div class="dates"><%= dates[i] %></div>
       <% } %>
+      <div class="dates">Today</div>
    </div>
 
    <div id="habit-history">
  
       <% for(let habit of habits) { %>
          <div class="habit-title"><%= habit.title %></div>
-   
-         <% for(let obj of history) { %>
-            <% if(habit.id == obj.habit) { %>
-               <% for(let date of dates) { %>
-                  <% if(obj.completionDate == date){ %> 
-                     <div class="habit-details">
-                        <%= obj.status %>
-                     </div>
-                  <% } else { %>
-                     <div class="habit-details">
 
-                     </div>
-                  <% } %> 
+         <!-- show previous 6 days habit's status -->
+         <% for(let i=0; i<dates.length-1; i++) { %>
+            <div class="habit-details">
+               <% for(let obj of history) { %>
+                  <% if(obj.completionDate == dates[i] && habit.id == obj.habit) { %>
+                        <!-- mark the status of habits -->
+                        <a href="/history/updatestatus/done/<%= obj._id %>">
+                           <button style="<% if(obj.status == 'Done'){ %>background-color: green <% } %>"><i class="fa-solid fa-check"></i></button>
+                        </a>
+                        <a href="/history/updatestatus/notdone/<%= obj._id %>">
+                           <button style="<% if(obj.status == 'Not Done'){ %>background-color: green <% } %>"><i class="fa-solid fa-xmark"></i></button>
+                        </a>
+                        <a href="/history/updatestatus/none/<%= obj._id %>">
+                           <button style="color: transparent; <% if(obj.status == 'None'){ %>background-color: green <% } %>">\0</button>
+                        </a>
+                  <% } %>   
                <% } %>
-            <% } %>
+            </div>
          <% } %>
-          
+         
+         <!-- show today's habit status -->
+         <div class="habit-details">
+            <a href="/habits/status/done/<%= habit._id %>">
+               <button style="<% if(habit.status == 'Done'){ %>background-color: green <% } %>"><i class="fa-solid fa-check"></i></button>
+            </a>
+            <a href="/habits/status/notdone/<%= habit._id %>">
+               <button style="<% if(habit.status == 'Not Done'){ %>background-color: green <% } %>"><i class="fa-solid fa-xmark"></i></button>
+            </a>
+            <a href="/habits/status/none/<%= habit._id %>">
+               <button style="color: transparent; <% if(habit.status == 'None'){ %>background-color: green <% } %>">\0</button>
+            </a>
+         </div>
       <% } %>
    </div>
 

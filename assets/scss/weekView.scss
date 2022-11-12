@@ -15,7 +15,6 @@ header h1{
 
 #list-header{
     display: flex;
-    flex-wrap: wrap;
     padding: 5px;
     margin-bottom: 1rem;
     background-color: rgb(254, 232, 236);
@@ -70,7 +69,22 @@ header h1{
         color: white;
     }
     .habit-details{
-        background-color: rgb(114, 112, 112);
+        background-color: rgb(226, 222, 222);
         color: white;
+
+        a{
+            text-decoration: none;
+
+            button{
+                background-color:rgb(106, 105, 105);
+                color: white;
+                border: none;
+                padding: 3px;
+                width: 2rem;
+                height: 2rem;
+                border-radius: 50%;
+                font-size: 1.2rem;
+            }
+        }
     }
 }
