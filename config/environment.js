@@ -6,7 +6,7 @@ const development = {
 
 const production = {
     name: 'production',
-    asset_path: '/assets',
+    asset_path: process.env.ASSET_PATH,
     db: process.env.HABITTRACKER_DB
 }
 
