@@ -1,3 +1,4 @@
+
 const mongoose = require('mongoose');
 
 mongoose.connect('mongodb://localhost/habitTracker');
@@ -10,4 +11,4 @@ db.once('open', function(){
     console.log('Connected to db:: MongoDB');
 });
 
-exports = db;
+module.exports = db;

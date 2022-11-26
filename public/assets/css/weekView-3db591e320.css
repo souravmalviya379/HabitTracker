@@ -1,0 +1,74 @@
+* {
+  box-sizing: border-box; }
+
+header h1 {
+  background-color: #727070;
+  color: white;
+  text-align: center;
+  padding: 7px;
+  width: 95%;
+  margin: auto;
+  margin-bottom: 1rem;
+  border-radius: 50px; }
+
+#list-header {
+  display: flex;
+  padding: 5px;
+  margin-bottom: 1rem;
+  background-color: #fee8ec;
+  width: 95%;
+  margin: auto;
+  text-align: center;
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px; }
+  #list-header #habit {
+    background-color: blueviolet;
+    color: white;
+    width: 10.5vw;
+    padding: 5px;
+    margin-left: 1vw;
+    border-radius: 4px;
+    font-size: 1.3rem; }
+  #list-header .dates {
+    border-radius: 4px;
+    margin-left: 1vw;
+    padding: 5px;
+    width: 10.5vw;
+    background-color: purple;
+    color: white;
+    font-size: 1.1rem; }
+
+#habit-history {
+  display: flex;
+  flex-wrap: wrap;
+  background-color: #fee8ec;
+  width: 95%;
+  margin: auto;
+  text-align: center;
+  border-bottom-left-radius: 8px;
+  border-bottom-right-radius: 8px;
+  padding: 5px; }
+  #habit-history .habit-title, #habit-history .habit-details {
+    width: 10.5vw;
+    padding: 5px;
+    margin-left: 1vw;
+    margin-bottom: 1vw;
+    font-size: 1.1rem;
+    border-radius: 4px; }
+  #habit-history .habit-title {
+    background-color: purple;
+    color: white; }
+  #habit-history .habit-details {
+    background-color: #e2dede;
+    color: white; }
+    #habit-history .habit-details a {
+      text-decoration: none; }
+      #habit-history .habit-details a button {
+        background-color: #6a6969;
+        color: white;
+        border: none;
+        padding: 3px;
+        width: 2rem;
+        height: 2rem;
+        border-radius: 50%;
+        font-size: 1.2rem; }

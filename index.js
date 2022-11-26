@@ -1,21 +1,23 @@
 const express = require('express');
+const env = require('./config/environment');
 const app = express();
+require('./config/view-helpers')(app);
 const port = 8000;
 const db = require('./config/mongoose');
 const sassMiddleware = require('node-sass-middleware');
 const Habit = require('./models/habit');
 const HabitLog = require('./models/habit_log');
-
+const path = require('path')
 
 app.use(sassMiddleware({
-    src: './assets/scss',
-    dest: './assets/css',
+    src: path.join(__dirname, env.asset_path, 'scss'),
+    dest: path.join(__dirname, env.asset_path, 'css'),
     debug: true,
     outputStyle: 'extended',
     prefix: '/css'
 }));
 
-app.use(express.static('./assets'));
+app.use(express.static(path.join(__dirname, env.asset_path)));
 
 app.set('view engine', 'ejs');
 app.set('views', './views');
@@ -48,6 +50,8 @@ setTimeout(() => {
                     completionDate: new Date().toLocaleDateString()
                 })
             }
+
+            
         } catch (err) {
             console.log('Error in pushing to history : ', err);
         }
@@ -58,7 +62,7 @@ setTimeout(() => {
     setInterval(pushHistory, 24*60*60*1000);
         // setInterval(pushHistory, 100000);
 
-    }, (24*60 - minutes - 2)*60*1000);
+}, (24*60 - minutes - 2)*60*1000);
         // }, 3000);
 
 

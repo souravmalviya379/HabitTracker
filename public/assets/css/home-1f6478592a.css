@@ -1,0 +1,100 @@
+body {
+  width: 98%;
+  margin: auto; }
+
+#header {
+  background-color: #6d016d;
+  color: #e0dfdf;
+  height: 3rem;
+  text-align: center;
+  box-sizing: border-box;
+  border-radius: 5px; }
+  #header h2 {
+    padding-top: 10px;
+    font-size: 1.6rem; }
+
+a.weekBtn button {
+  text-decoration: none;
+  margin: 12px;
+  position: absolute;
+  right: 5vw;
+  font-size: 1.2rem; }
+
+#habits-list {
+  margin-top: 4rem;
+  background-color: #f7dce7;
+  padding: 8px;
+  list-style: none;
+  font-weight: bold;
+  border-radius: 5px; }
+  #habits-list li {
+    display: flex;
+    justify-content: space-between;
+    padding-right: 15px;
+    padding-left: 5px;
+    height: 4.7rem;
+    background-color: lightgrey;
+    margin: 7px;
+    border-top-left-radius: 7px;
+    border-bottom-right-radius: 20px; }
+    #habits-list li .habit-details p:first-child {
+      color: purple;
+      padding: 3px;
+      font-size: 1.3rem;
+      margin: 0px; }
+      #habits-list li .habit-details p:first-child small {
+        font-size: 1rem;
+        display: inline-block;
+        position: absolute;
+        right: 10vw;
+        margin-top: 1.4rem; }
+    #habits-list li .habit-details a {
+      text-decoration: none; }
+    #habits-list li .habit-details a.delete-habit button {
+      width: 5rem;
+      height: 2rem;
+      margin-left: 1rem; }
+    #habits-list li .delete-habit a:hover {
+      color: red; }
+    #habits-list li .delete-habit a i {
+      font-size: 2rem;
+      margin-top: 1rem; }
+
+#create-habit {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin: 20px auto;
+  background-color: #f4bcbc;
+  height: 7rem;
+  width: 70%;
+  padding: 10px;
+  border-radius: 5px; }
+  #create-habit #title {
+    height: 3rem;
+    padding: 5px;
+    background-color: lightgrey;
+    border: none;
+    width: 60%;
+    border-radius: 5px; }
+  #create-habit #timing {
+    width: 35%;
+    padding: 5px;
+    background-color: lightgray;
+    border: none;
+    height: 3rem;
+    border-radius: 5px; }
+
+button {
+  height: 2.6rem;
+  width: 9rem;
+  align-self: center;
+  margin: auto;
+  background-color: #5b5959;
+  border: none;
+  padding: 5px;
+  color: white;
+  border-radius: 4px; }
+
+button:hover {
+  background-color: black; }
