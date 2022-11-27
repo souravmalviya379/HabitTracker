@@ -22,7 +22,7 @@ app.use(express.static(path.join(__dirname, env.asset_path)));
 app.set('view engine', 'ejs');
 app.set('views', './views');
 
-app.use(express.urlencoded());
+app.use(express.urlencoded({extended: false}));
 
 
 
