@@ -50,8 +50,9 @@ setTimeout(() => {
                     completionDate: new Date().toLocaleDateString()
                 })
             }
-
             
+            //setting all the habits status as none for the next day
+            await Habit.updateMany({}, {status: 'None'});
         } catch (err) {
             console.log('Error in pushing to history : ', err);
         }
@@ -64,7 +65,6 @@ setTimeout(() => {
 
 }, (24*60 - minutes - 2)*60*1000);
         // }, 3000);
-
 
 app.use('/', require('./routes'));
 
