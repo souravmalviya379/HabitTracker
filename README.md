@@ -1,5 +1,7 @@
 # HabitTracker Web App
 
+Deployed link: http://ec2-54-178-75-221.ap-northeast-1.compute.amazonaws.com/
+
 ## Introduction And Features
 In HabitTracker WebApp, user can add his/her daily habits he need to follow, and can mark the status whether habit is performed or not.
 
